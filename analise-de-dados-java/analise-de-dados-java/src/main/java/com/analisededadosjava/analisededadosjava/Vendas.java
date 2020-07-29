@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Vendas {
-    
+
     private ArrayList<Venda> vendas = new ArrayList<>();
 
     public ArrayList<Integer> getListaIdVenda(){
