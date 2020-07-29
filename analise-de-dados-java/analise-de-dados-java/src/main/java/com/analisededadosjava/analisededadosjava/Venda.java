@@ -67,5 +67,5 @@ public class Venda {
     public void setValorVenda(double valorVenda) {
         this.valorVenda = valorVenda;
     }
-    
+
 }
