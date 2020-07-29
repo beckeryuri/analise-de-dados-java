@@ -33,5 +33,5 @@ public class Vendedores {
     public void adicionarVendedor(Vendedor vendedor){
         this.vendedores.add(vendedor);
     }
-    
+
 }
