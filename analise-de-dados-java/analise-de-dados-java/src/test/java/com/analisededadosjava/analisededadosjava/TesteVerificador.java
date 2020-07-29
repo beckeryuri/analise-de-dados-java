@@ -15,5 +15,5 @@ public class TesteVerificador {
         Assertions.assertEquals( "Pedro", array[2]);
         Assertions.assertEquals( "50000", array[3]);
     }
-    
+
 }
