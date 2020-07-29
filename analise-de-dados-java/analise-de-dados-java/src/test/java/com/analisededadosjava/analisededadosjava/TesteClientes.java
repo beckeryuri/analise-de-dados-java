@@ -24,8 +24,13 @@ public class TesteClientes {
         String dado = "002ç2345675434544345çJose da SilvaçRural";
         Cliente cliente = new Cliente(verificador.divideDado(dado));
         clientes.adicionarCliente(cliente);
+        String dado2 = "002ç2345555534544345çPedro da RochaçRural";
+        Cliente cliente2 = new Cliente(verificador.divideDado(dado2));
+        clientes.adicionarCliente(cliente);
+        clientes.adicionarCliente(cliente2);
         ArrayList<String> listaCnpj = new ArrayList<>();
         listaCnpj.add("2345675434544345");
+        listaCnpj.add("2345555534544345");
         Assertions.assertEquals( listaCnpj, clientes.getListaCnpj());
     }
 
