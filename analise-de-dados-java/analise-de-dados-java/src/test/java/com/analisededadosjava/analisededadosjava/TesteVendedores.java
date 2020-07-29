@@ -28,5 +28,5 @@ public class TesteVendedores {
         listaCpf.add("1234567891234");
         Assertions.assertEquals(listaCpf, vendedores.getListaCpf());
     }
-    
+
 }
