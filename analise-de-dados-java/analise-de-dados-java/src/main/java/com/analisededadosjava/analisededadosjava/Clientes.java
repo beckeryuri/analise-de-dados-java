@@ -3,7 +3,7 @@ package com.analisededadosjava.analisededadosjava;
 import java.util.ArrayList;
 
 public class Clientes {
-    
+
     private ArrayList<Cliente> clientes = new ArrayList<>();
 
     public ArrayList<String> getListaCnpj(){
