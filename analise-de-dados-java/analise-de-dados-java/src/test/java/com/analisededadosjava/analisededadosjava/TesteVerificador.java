@@ -17,6 +17,14 @@ public class TesteVerificador {
     }
 
     @Test
+    public void dadoDivididoDevePossuirQuatroStrings(){
+        Verificador verificador = new Verificador();
+        String dado = "001ç1234567891234çPedroç50000";
+        String[] array = verificador.divideDado(dado);
+        Assertions.assertEquals( 4, array.length);
+    }
+
+    @Test
     public void deveVerificarEAdicionarVendedor(){
         Verificador verificador = new Verificador();
         String dado = "001ç1234567891234çPedroç50000";

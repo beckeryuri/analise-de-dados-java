@@ -58,10 +58,10 @@ public class ManipuladorDeArquivos {
     public void escrituraDeArquivos(Verificador verificado) {
 
         try {
-            String quantidadeClientes = "A quantidade de clientes dos arquivos lidos é de: " +  verificado.getClientes().getQuantidadeClientes();
-            String quantidadeVendedores = "A quantidade de vendedores dos arquivos lidos é de: " +  verificado.getVendedores().getQuantidadeVendedores();
-            String piorvendedor = verificado.getVendas().getPiorVendedor();
-            String maiorVenda =  "O ID da venda de maior valor é: " + verificado.getVendas().getMaiorVenda();
+            String quantidadeClientes = "A quantidade de clientes dos arquivos lidos é de: " +  verificado.getClientes().getQuantidadeClientes() + ".";
+            String quantidadeVendedores = "A quantidade de vendedores dos arquivos lidos é de: " +  verificado.getVendedores().getQuantidadeVendedores() + ".";
+            String piorvendedor = verificado.getVendas().getPiorVendedor() + ".";
+            String maiorVenda =  "O ID da venda de maior valor é: " + verificado.getVendas().getMaiorVenda() + ".";
 
             Date date = new Date();
 
@@ -84,7 +84,7 @@ public class ManipuladorDeArquivos {
             bw.newLine();
             bw.close();
 
-            logger.info("Um novo relátorio foi escrito");
+            logger.info("Um novo relátorio foi escrito.");
 
         } catch (IOException e) {
             e.printStackTrace();
