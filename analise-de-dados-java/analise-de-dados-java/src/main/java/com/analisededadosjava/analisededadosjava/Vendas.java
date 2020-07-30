@@ -42,7 +42,7 @@ public class Vendas {
         return totalVendas;
     }
 
-    public String getPiorVendedor(){
+    public ArrayList<String> getPiorVendedor(){
         ArrayList<String> vendedores = getVendedores();
         Map<String, Double> vendasPorVendedor  = new HashMap<>();
         String nomePiorVendedor;
@@ -59,7 +59,11 @@ public class Vendas {
         valorPiorVenda = piorVendedor.values().toString().replace("[","").replace("]", "");
         nomePiorVendedor = piorVendedor.keySet().toString().replace("[","").replace("]", "");
 
-        return "O vendedor que vendeu o menor valor do mês foi o vendedor " + nomePiorVendedor + " vendendo um valor de: R$" + valorPiorVenda;
+        ArrayList<String> dadosPiorVendedor = new ArrayList<>();
+        dadosPiorVendedor.add(valorPiorVenda);
+        dadosPiorVendedor.add(nomePiorVendedor);
+
+        return dadosPiorVendedor;
     }
 
     public int getMaiorVenda(){
