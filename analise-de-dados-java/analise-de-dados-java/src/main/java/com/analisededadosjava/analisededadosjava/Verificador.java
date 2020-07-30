@@ -16,29 +16,57 @@ public class Verificador {
         return arrayDado;
     }
 
-    public void verificaDado(String dado) {
+    public void verificaVendedor(String[] arrayDividido){
+        String codigoVendedor = "001";
 
-        String[] codigosValidos = {"001", "002", "003"};
-        String[] arrayDividido = this.divideDado(dado);
-
-        if ( arrayDividido[0].equals(codigosValidos[0]) && !vendedores.getListaCpf().contains( arrayDividido[1] )) {
+        if( arrayDividido[0].equals(codigoVendedor) && !this.vendedores.getListaCpf().contains( arrayDividido[1] )) {
             Vendedor vendedor = new Vendedor(arrayDividido);
-            vendedores.adicionarVendedor(vendedor);
+            this.vendedores.adicionarVendedor(vendedor);
             logger.info("Vendedor criado");
+        }else if (arrayDividido[0].equals(codigoVendedor) && this.vendedores.getListaCpf().contains( arrayDividido[1] )){
+            logger.info("Vendedor não adicionado pois cpf já foi cadastrado");
         }
-        if ( arrayDividido[0].equals(codigosValidos[1]) && !clientes.getListaCnpj().contains( arrayDividido[1] )) {
+    }
+
+    public void verificaCliente(String[] arrayDividido){
+        String codigoCliente = "002";
+        if( arrayDividido[0].equals(codigoCliente) && !this.clientes.getListaCnpj().contains( arrayDividido[1] )) {
             Cliente cliente = new Cliente(arrayDividido);
             this.clientes.adicionarCliente(cliente);
             logger.info("Cliente criado");
+        }else if ( arrayDividido[0].equals(codigoCliente) && this.clientes.getListaCnpj().contains( arrayDividido[1] )){
+            logger.info("Cliente não adicionado pois cnpj já foi cadastrado");
         }
-        if ( arrayDividido[0].equals(codigosValidos[2]) && !vendas.getListaIdVenda().contains( Integer.parseInt(arrayDividido[1] ) )) {
+    }
+
+    public void verificaVenda(String[] arrayDividido){
+        String codigoVenda = "003";
+        if( arrayDividido[0].equals(codigoVenda) && !this.vendas.getListaIdVenda().contains( Integer.parseInt(arrayDividido[1] ) )) {
             Venda venda = new Venda(arrayDividido);
-            vendas.adicionarVenda(venda);
+            this.vendas.adicionarVenda(venda);
             logger.info("Venda adicionada");
+        }else if ( arrayDividido[0].equals(codigoVenda) && this.vendas.getListaIdVenda().contains( Integer.parseInt(arrayDividido[1] ) )){
+            logger.info("Venda não adicionada pois idVenda já foi cadastrado");
         }
+    }
+
+    public void verificaInvalido(String[] arrayDividido){
+        String[] codigosValidos = {"001", "002", "003"};
         if( !arrayDividido[0].equals( codigosValidos[0]) && !arrayDividido[0].equals( codigosValidos[1]) && !arrayDividido[0].equals( codigosValidos[2]) ){
-            logger.warn("Dado ignorado pois o código é inválido");
+            logger.info("Dado ignorado pois o código é inválido");
         }
+    }
+
+
+    public void verificaDado(String dado) {
+
+        String[] arrayDividido = this.divideDado(dado);
+
+        this.verificaVendedor(arrayDividido);
+        this.verificaCliente(arrayDividido);
+        this.verificaVenda(arrayDividido);
+        this.verificaInvalido(arrayDividido);
+
     }
 
     public Clientes getClientes() {
