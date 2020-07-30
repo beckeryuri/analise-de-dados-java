@@ -24,6 +24,15 @@ public class TesteVerificador {
         Assertions.assertEquals(1, verificador.getVendedores().getQuantidadeVendedores());
     }
     @Test
+    public void deveAdicionarApenasUmVendedorPorCpf(){
+        Verificador verificador = new Verificador();
+        String dado = "001ç1234567891234çPedroç50000";
+        String dado1 = "001ç1234567891234çJoaoç35000";
+        verificador.verificaDado(dado);
+        verificador.verificaDado(dado1);
+        Assertions.assertEquals(1, verificador.getVendedores().getQuantidadeVendedores());
+    }
+    @Test
     public void deveVerificarEAdicionarCliente(){
         Verificador verificador = new Verificador();
         String dado = "002ç2345675434544345çJose da SilvaçRural";
@@ -31,10 +40,30 @@ public class TesteVerificador {
         Assertions.assertEquals(1, verificador.getClientes().getQuantidadeClientes());
     }
     @Test
+    public void deveAdicionarUmClientePorCnpj(){
+        Verificador verificador = new Verificador();
+        String dado = "002ç2345675434544345çJose da SilvaçRural";
+        String dado1 = "002ç2345675434544345çFernando AlvesçRural";
+        verificador.verificaDado(dado);
+        verificador.verificaDado(dado1);
+        Assertions.assertEquals(1, verificador.getClientes().getQuantidadeClientes());
+    }
+
+    @Test
     public void deveVerificarEAdicionarVenda(){
         Verificador verificador = new Verificador();
         String dado = "003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         verificador.verificaDado(dado);
+        Assertions.assertEquals(1, verificador.getVendas().getQuantidadeVendas());
+    }
+
+    @Test
+    public void deveAdicionarUmaVendaPorIdVenda(){
+        Verificador verificador = new Verificador();
+        String dado = "003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
+        String dado1 = "003ç10ç[2-30-2.50,3-40-3.10]çCleber";
+        verificador.verificaDado(dado);
+        verificador.verificaDado(dado1);
         Assertions.assertEquals(1, verificador.getVendas().getQuantidadeVendas());
     }
 

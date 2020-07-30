@@ -1,6 +1,6 @@
 package com.analisededadosjava.analisededadosjava;
 
-public class Cliente {
+public class  Cliente {
 
     private int id;
     private String cnpj;
