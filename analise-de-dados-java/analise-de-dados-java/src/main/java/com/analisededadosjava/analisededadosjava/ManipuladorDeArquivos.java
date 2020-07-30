@@ -1,9 +1,14 @@
 package com.analisededadosjava.analisededadosjava;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.util.Date;
 
 public class ManipuladorDeArquivos {
+
+    Logger logger = LoggerFactory.getLogger(ManipuladorDeArquivos.class);
 
     public void deveLimparPasta(){
         File folder = new File("/home/becker/data/in");
@@ -13,6 +18,7 @@ public class ManipuladorDeArquivos {
                 toDelete.delete();
             }
         }
+        logger.info("Arquivos da pasta in foram deletados.");
     }
 
     public void deveEscreverReport(ManipuladorDeArquivos manipulador){
@@ -25,6 +31,8 @@ public class ManipuladorDeArquivos {
     public Verificador leituraDeArquivos() {
         Verificador verificar = new Verificador();
 
+        int qtdArquivosLidos = 0;
+
         FileFilter filter = file -> file.getName().endsWith(".dat");
 
         File path = new File("/home/becker/data/in");
@@ -32,6 +40,7 @@ public class ManipuladorDeArquivos {
         File[] files = path.listFiles(filter);
 
         for (File file : files) {
+            qtdArquivosLidos++;
             try (BufferedReader br = new BufferedReader(new FileReader(file.getAbsoluteFile()))) {
                 String line = br.readLine();
                 while (line != null) {
@@ -43,6 +52,7 @@ public class ManipuladorDeArquivos {
             }
 
         }
+        logger.info("O total de " + qtdArquivosLidos + " arquivos foram lidos.");
         return verificar;
     }
     public void escrituraDeArquivos(Verificador verificado) {
@@ -73,6 +83,8 @@ public class ManipuladorDeArquivos {
             bw.write(piorvendedor);
             bw.newLine();
             bw.close();
+
+            logger.info("Um novo relátorio foi escrito");
 
         } catch (IOException e) {
             e.printStackTrace();
