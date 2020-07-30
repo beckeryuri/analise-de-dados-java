@@ -24,7 +24,7 @@ public class Verificador {
             this.vendedores.adicionarVendedor(vendedor);
             logger.info("Vendedor adicionado.");
         }else if (arrayDividido[0].equals(codigoVendedor) && this.vendedores.getListaCpf().contains( arrayDividido[1] ) && arrayDividido.length == 4 ){
-            logger.info("Vendedor não adicionado pois o CPF já foi cadastrado.");
+            logger.info("Vendedor não adicionado pois cpf já foi cadastrado.");
         }
     }
 
@@ -35,7 +35,7 @@ public class Verificador {
             this.clientes.adicionarCliente(cliente);
             logger.info("Cliente adicionado.");
         }else if ( arrayDividido[0].equals(codigoCliente) && this.clientes.getListaCnpj().contains( arrayDividido[1] ) && arrayDividido.length == 4){
-            logger.info("Cliente não foi adicionado pois o CNPJ já foi cadastrado.");
+            logger.info("Cliente não adicionado pois cnpj já foi cadastrado.");
         }
     }
 
@@ -46,7 +46,7 @@ public class Verificador {
             this.vendas.adicionarVenda(venda);
             logger.info("Venda adicionada.");
         }else if ( arrayDividido[0].equals(codigoVenda) && this.vendas.getListaIdVenda().contains( Integer.parseInt(arrayDividido[1] ) ) && arrayDividido.length == 4 ){
-            logger.info("Venda não adicionada pois o ID da venda já foi cadastrado.");
+            logger.info("Venda não adicionada pois idVenda já foi cadastrado.");
         }
     }
 
