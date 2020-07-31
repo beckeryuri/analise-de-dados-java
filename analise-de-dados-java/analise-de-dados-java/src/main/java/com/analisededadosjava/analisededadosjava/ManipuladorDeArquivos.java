@@ -15,7 +15,7 @@ public class ManipuladorDeArquivos {
     Logger logger = LoggerFactory.getLogger(ManipuladorDeArquivos.class);
 
 
-    public void deveLimparPasta(){
+    public void deveLimparPasta() {
         File folder = new File("/home/becker/data/in");
         if (folder.isDirectory()) {
             File[] sun = folder.listFiles();
@@ -26,7 +26,7 @@ public class ManipuladorDeArquivos {
         logger.info("Arquivos da pasta in foram deletados.");
     }
 
-    public void deveEscreverReport(ManipuladorDeArquivos manipulador){
+    public void deveEscreverReport(ManipuladorDeArquivos manipulador) {
 
         Verificador verificado = manipulador.leituraDeArquivos();
         manipulador.escrituraDeArquivos(verificado);
@@ -60,23 +60,24 @@ public class ManipuladorDeArquivos {
         logger.info("O total de " + qtdArquivosLidos + " arquivos foram lidos.");
         return verificar;
     }
+
     public void escrituraDeArquivos(Verificador verificado) {
 
         try {
             String quantidadeClientes = verificado.getClientes().getQuantidadeClientes() > 0 ?
-                "A quantidade de clientes registrados nos arquivos processados é: " +  verificado.getClientes().getQuantidadeClientes() + "." :
+                    "A quantidade de clientes registrados nos arquivos processados é: " + verificado.getClientes().getQuantidadeClientes() + "." :
                     "Nenhum cliente foi registrado.";
 
             String quantidadeVendedores = verificado.getVendedores().getQuantidadeVendedores() > 0 ?
-                    "A quantidade de vendedores registrados nos arquivos processados é: " +  verificado.getVendedores().getQuantidadeVendedores() + "." :
-                        "Nenhum vendedor foi registrado.";
+                    "A quantidade de vendedores registrados nos arquivos processados é: " + verificado.getVendedores().getQuantidadeVendedores() + "." :
+                    "Nenhum vendedor foi registrado.";
 
             String piorvendedor = verificado.getVendas().getQuantidadeVendas() > 0 ?
                     "O maior vendedor é o vendedor " + verificado.getVendas().getPiorVendedor().get(1).toUpperCase() +
-                            " vendendo um total de: R$" + verificado.getVendas().getPiorVendedor().get(0)+ ".":
+                            " vendendo um total de: R$" + verificado.getVendas().getPiorVendedor().get(0) + "." :
                     "Não foi possível acessar o maior vendedor pois nenhuma venda foi registrada.";
 
-            String maiorVenda =  verificado.getVendas().getQuantidadeVendas() > 0 ?
+            String maiorVenda = verificado.getVendas().getQuantidadeVendas() > 0 ?
                     "O ID da venda de maior valor é: " + verificado.getVendas().getMaiorVenda() + "." :
                     "Não foi possível acessar a maior venda pois nenhuma venda foi registrada";
 

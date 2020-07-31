@@ -12,7 +12,7 @@ public class Produto {
         this.preço = Double.parseDouble(array[2]);
     }
 
-    public double getValorVendaItem(){
+    public double getValorVendaItem() {
         return this.quantidade * this.preço;
     }
 

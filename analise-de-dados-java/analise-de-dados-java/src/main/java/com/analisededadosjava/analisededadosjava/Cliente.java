@@ -1,6 +1,6 @@
 package com.analisededadosjava.analisededadosjava;
 
-public class  Cliente {
+public class Cliente {
 
     private int id;
     private String cnpj;
@@ -8,10 +8,10 @@ public class  Cliente {
     private String businessArea;
 
     public Cliente(String[] array) {
-        this.id = Integer.parseInt(array[0] );
+        this.id = Integer.parseInt(array[0]);
         this.cnpj = array[1];
         this.nome = array[2];
-        this. businessArea = array[3];
+        this.businessArea = array[3];
     }
 
     public int getId() {

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class TesteClientes {
 
     @Test
-    public void deveAdicionarUmCliente(){
+    public void deveAdicionarUmCliente() {
         Verificador verificador = new Verificador();
         Clientes clientes = new Clientes();
         String dado = "002ç2345675434544345çJose da SilvaçRural";
@@ -18,7 +18,7 @@ public class TesteClientes {
     }
 
     @Test
-    public void deveRetornarListaDeCnpj(){
+    public void deveRetornarListaDeCnpj() {
         Verificador verificador = new Verificador();
         Clientes clientes = new Clientes();
         String dado = "002ç2345675434544345çJose da SilvaçRural";
@@ -31,7 +31,7 @@ public class TesteClientes {
         ArrayList<String> listaCnpj = new ArrayList<>();
         listaCnpj.add("2345675434544345");
         listaCnpj.add("2345555534544345");
-        Assertions.assertEquals( listaCnpj, clientes.getListaCnpj());
+        Assertions.assertEquals(listaCnpj, clientes.getListaCnpj());
     }
 
 }

@@ -18,7 +18,7 @@ public class UploadController {
 
     @PostMapping("/individual")
     public void uploadIndividual(@RequestParam ArrayList<MultipartFile> dados) {
-        for(MultipartFile dado : dados){
+        for (MultipartFile dado : dados) {
             this.uploadService.salvarIndividual(dado);
         }
     }

@@ -9,45 +9,45 @@ public class Vendas {
 
     private ArrayList<Venda> vendas = new ArrayList<>();
 
-    public ArrayList<Integer> getListaIdVenda(){
+    public ArrayList<Integer> getListaIdVenda() {
 
         ArrayList<Integer> ids = new ArrayList();
         int id;
-        for(Venda venda : this.vendas){
+        for (Venda venda : this.vendas) {
             id = venda.getIdVenda();
             ids.add(id);
         }
         return ids;
     }
 
-    public ArrayList<String> getVendedores(){
+    public ArrayList<String> getVendedores() {
         ArrayList<String> vendedores = new ArrayList();
         String vendedor;
-        for(Venda venda : this.vendas){
+        for (Venda venda : this.vendas) {
             vendedor = venda.getNomeVendedor();
-            if(!vendedores.contains(vendedor)){
+            if (!vendedores.contains(vendedor)) {
                 vendedores.add(vendedor);
             }
         }
         return vendedores;
     }
 
-    public double getTotalVendasPorNome(String nome){
+    public double getTotalVendasPorNome(String nome) {
         double totalVendas = 0;
-        for(Venda venda : this.vendas){
-            if(venda.getNomeVendedor().equals(nome)){
+        for (Venda venda : this.vendas) {
+            if (venda.getNomeVendedor().equals(nome)) {
                 totalVendas += venda.getValorVenda();
             }
         }
         return totalVendas;
     }
 
-    public ArrayList<String> getPiorVendedor(){
+    public ArrayList<String> getPiorVendedor() {
         ArrayList<String> vendedores = getVendedores();
-        Map<String, Double> vendasPorVendedor  = new HashMap<>();
+        Map<String, Double> vendasPorVendedor = new HashMap<>();
         String nomePiorVendedor;
         String valorPiorVenda;
-        for(int i = 0; i < vendedores.size(); i++){
+        for (int i = 0; i < vendedores.size(); i++) {
             vendasPorVendedor.put(vendedores.get(i), getTotalVendasPorNome(vendedores.get(i)));
         }
         Map<String, Double> piorVendedor =
@@ -56,8 +56,8 @@ public class Vendas {
                         .limit(1)
                         .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
-        valorPiorVenda = piorVendedor.values().toString().replace("[","").replace("]", "");
-        nomePiorVendedor = piorVendedor.keySet().toString().replace("[","").replace("]", "");
+        valorPiorVenda = piorVendedor.values().toString().replace("[", "").replace("]", "");
+        nomePiorVendedor = piorVendedor.keySet().toString().replace("[", "").replace("]", "");
 
         ArrayList<String> dadosPiorVendedor = new ArrayList<>();
         dadosPiorVendedor.add(valorPiorVenda);
@@ -66,26 +66,27 @@ public class Vendas {
         return dadosPiorVendedor;
     }
 
-    public int getMaiorVenda(){
+    public int getMaiorVenda() {
         double maiorVenda = 0;
         int idMaiorVenda = 0;
-        for(Venda venda: vendas){
-            if(venda.getValorVenda() > maiorVenda){
+        for (Venda venda : vendas) {
+            if (venda.getValorVenda() > maiorVenda) {
                 maiorVenda = venda.getValorVenda();
                 idMaiorVenda = venda.getIdVenda();
             }
         }
         return idMaiorVenda;
     }
+
     public ArrayList<Venda> getVendas() {
         return vendas;
     }
 
-    public int getQuantidadeVendas(){
+    public int getQuantidadeVendas() {
         return vendas.size();
     }
 
-    public void adicionarVenda(Venda venda){
+    public void adicionarVenda(Venda venda) {
         this.vendas.add(venda);
     }
 

@@ -6,12 +6,12 @@ public class Vendedores {
 
     private ArrayList<Vendedor> vendedores = new java.util.ArrayList<>();
 
-    public ArrayList<String> getListaCpf(){
+    public ArrayList<String> getListaCpf() {
         ArrayList<String> lista = new ArrayList();
         String cpf;
-        for(Vendedor vendedor : this.vendedores){
+        for (Vendedor vendedor : this.vendedores) {
             cpf = vendedor.getCpf();
-            if(!lista.contains(cpf)){
+            if (!lista.contains(cpf)) {
                 lista.add(cpf);
             }
         }
@@ -26,11 +26,11 @@ public class Vendedores {
         this.vendedores = vendedores;
     }
 
-    public int getQuantidadeVendedores(){
+    public int getQuantidadeVendedores() {
         return vendedores.size();
     }
 
-    public void adicionarVendedor(Vendedor vendedor){
+    public void adicionarVendedor(Vendedor vendedor) {
         this.vendedores.add(vendedor);
     }
 

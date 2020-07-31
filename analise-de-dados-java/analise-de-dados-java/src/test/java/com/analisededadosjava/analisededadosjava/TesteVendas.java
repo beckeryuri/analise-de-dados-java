@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class TesteVendas {
 
     @Test
-    public void deveAdicionarUmaVenda(){
+    public void deveAdicionarUmaVenda() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -19,7 +19,7 @@ public class TesteVendas {
     }
 
     @Test
-    public void deveRetornarIdMaiorVenda(){
+    public void deveRetornarIdMaiorVenda() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -33,7 +33,7 @@ public class TesteVendas {
     }
 
     @Test
-    public void deveRetonarPiorVendedor(){
+    public void deveRetonarPiorVendedor() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -47,7 +47,7 @@ public class TesteVendas {
     }
 
     @Test
-    public void deveRetonarVendasPorNome(){
+    public void deveRetonarVendasPorNome() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -57,11 +57,11 @@ public class TesteVendas {
         Venda venda2 = new Venda(verificador.divideDado(dado2));
         vendas.adicionarVenda(venda);
         vendas.adicionarVenda(venda2);
-        Assertions.assertEquals( 1199, vendas.getTotalVendasPorNome("Pedro"), 1e-9);
+        Assertions.assertEquals(1199, vendas.getTotalVendasPorNome("Pedro"), 1e-9);
     }
 
     @Test
-    public void deveRetonarListaDeIdsDeVenda(){
+    public void deveRetonarListaDeIdsDeVenda() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -78,7 +78,7 @@ public class TesteVendas {
     }
 
     @Test
-    public void deveRetonarNomeDosVendedores(){
+    public void deveRetonarNomeDosVendedores() {
 
         Verificador verificador = new Verificador();
         Vendas vendas = new Vendas();
@@ -88,7 +88,7 @@ public class TesteVendas {
         Venda venda2 = new Venda(verificador.divideDado(dado2));
         vendas.adicionarVenda(venda);
         vendas.adicionarVenda(venda2);
-        ArrayList<String> nomeVendedores =  new ArrayList<>();
+        ArrayList<String> nomeVendedores = new ArrayList<>();
         nomeVendedores.add("Pedro");
         nomeVendedores.add("Joao");
         Assertions.assertEquals(nomeVendedores, vendas.getVendedores());

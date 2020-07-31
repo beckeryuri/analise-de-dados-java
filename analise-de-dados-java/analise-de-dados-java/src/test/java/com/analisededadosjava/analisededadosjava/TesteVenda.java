@@ -6,35 +6,39 @@ import org.junit.jupiter.api.Test;
 public class TesteVenda {
 
     @Test
-    public void deveRetornarId(){
+    public void deveRetornarId() {
         String dado = "003ç08ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String arrayDados[] = dado.split("ç");
         Venda venda = new Venda(arrayDados);
         Assertions.assertEquals(3, venda.getId());
     }
+
     @Test
-    public void deveRetornarIdDaVenda(){
+    public void deveRetornarIdDaVenda() {
         String dado = "003ç08ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String arrayDados[] = dado.split("ç");
         Venda venda = new Venda(arrayDados);
         Assertions.assertEquals(8, venda.getIdVenda());
     }
+
     @Test
-    public void deveRetornarNomeDoVendedorQueRealizouAVenda(){
+    public void deveRetornarNomeDoVendedorQueRealizouAVenda() {
         String dado = "003ç08ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String arrayDados[] = dado.split("ç");
         Venda venda = new Venda(arrayDados);
-        Assertions.assertEquals("Pedro",venda.getNomeVendedor());
+        Assertions.assertEquals("Pedro", venda.getNomeVendedor());
     }
+
     @Test
-    public void deveRetornarQuantidadeDeProdutosDaVenda(){
+    public void deveRetornarQuantidadeDeProdutosDaVenda() {
         String dado = "003ç08ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String arrayDados[] = dado.split("ç");
         Venda venda = new Venda(arrayDados);
         Assertions.assertEquals(3, venda.getQuantidadeProdutos());
     }
+
     @Test
-    public void deveRetornarValorDaVenda(){
+    public void deveRetornarValorDaVenda() {
         String dado = "003ç08ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String arrayDados[] = dado.split("ç");
         Venda venda = new Venda(arrayDados);

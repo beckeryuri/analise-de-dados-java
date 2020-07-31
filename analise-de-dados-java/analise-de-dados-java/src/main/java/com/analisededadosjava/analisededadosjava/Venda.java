@@ -14,17 +14,18 @@ public class Venda {
         this.id = Integer.parseInt(array[0]);
         this.idVenda = Integer.parseInt(array[1]);
         String arrayProdutos[] = array[2].split(",");
-        for( int i = 0 ; i < arrayProdutos.length; i++){
-            String arrayProduto[] = arrayProdutos[i].replace("[","").replace("]", "").split("-");
+        for (int i = 0; i < arrayProdutos.length; i++) {
+            String arrayProduto[] = arrayProdutos[i].replace("[", "").replace("]", "").split("-");
             Produto produto = new Produto(arrayProduto);
             produtos.add(produto);
         }
         this.nomeVendedor = array[3];
-        for(Produto produto : produtos){
+        for (Produto produto : produtos) {
             this.valorVenda += produto.getValorVendaItem();
         }
     }
-    public int getQuantidadeProdutos(){
+
+    public int getQuantidadeProdutos() {
         return produtos.size();
     }
 

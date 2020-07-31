@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class TesteVendedores {
 
     @Test
-    public void deveAdicionarUmVendedor(){
+    public void deveAdicionarUmVendedor() {
         Verificador verificador = new Verificador();
         Vendedores vendedores = new Vendedores();
         String dado = "001ç1234567891234çPedroç50000";
@@ -18,7 +18,7 @@ public class TesteVendedores {
     }
 
     @Test
-    public void deveRetornarListaDeCpfs(){
+    public void deveRetornarListaDeCpfs() {
         Verificador verificador = new Verificador();
         Vendedores vendedores = new Vendedores();
         String dado = "001ç1234567891234çPedroç50000";

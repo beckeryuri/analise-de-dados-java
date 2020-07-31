@@ -5,28 +5,31 @@ import org.junit.jupiter.api.Test;
 
 public class TesteVendedor {
     @Test
-    public void deveRetornarIdVendedor(){
+    public void deveRetornarIdVendedor() {
         String dado = "001ç1234567891234çPedroç50000";
         String arrayDados[] = dado.split("ç");
         Vendedor vendedor = new Vendedor(arrayDados);
         Assertions.assertEquals(1, vendedor.getId());
     }
+
     @Test
-    public void deveRetornarCpfDoVendedor(){
+    public void deveRetornarCpfDoVendedor() {
         String dado = "001ç1234567891234çPedroç50000";
         String arrayDados[] = dado.split("ç");
         Vendedor vendedor = new Vendedor(arrayDados);
         Assertions.assertEquals("1234567891234", vendedor.getCpf());
     }
+
     @Test
-    public void deveRetonarNomeDoVendedor(){
+    public void deveRetonarNomeDoVendedor() {
         String dado = "001ç1234567891234çPedroç50000";
         String arrayDados[] = dado.split("ç");
         Vendedor vendedor = new Vendedor(arrayDados);
         Assertions.assertEquals("Pedro", vendedor.getNome());
     }
+
     @Test
-    public void deveRetornarSalarioDoVendedor(){
+    public void deveRetornarSalarioDoVendedor() {
         String dado = "001ç1234567891234çPedroç50000";
         String arrayDados[] = dado.split("ç");
         Vendedor vendedor = new Vendedor(arrayDados);

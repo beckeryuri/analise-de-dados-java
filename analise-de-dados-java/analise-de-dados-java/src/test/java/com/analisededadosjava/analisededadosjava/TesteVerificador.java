@@ -6,33 +6,34 @@ import org.junit.jupiter.api.Test;
 public class TesteVerificador {
 
     @Test
-    public void deveDividirDado(){
+    public void deveDividirDado() {
         Verificador verificador = new Verificador();
         String dado = "001ç1234567891234çPedroç50000";
         String[] array = verificador.divideDado(dado);
-        Assertions.assertEquals( "001", array[0]);
-        Assertions.assertEquals( "1234567891234", array[1]);
-        Assertions.assertEquals( "Pedro", array[2]);
-        Assertions.assertEquals( "50000", array[3]);
+        Assertions.assertEquals("001", array[0]);
+        Assertions.assertEquals("1234567891234", array[1]);
+        Assertions.assertEquals("Pedro", array[2]);
+        Assertions.assertEquals("50000", array[3]);
     }
 
     @Test
-    public void dadoDivididoDevePossuirQuatroStrings(){
+    public void dadoDivididoDevePossuirQuatroStrings() {
         Verificador verificador = new Verificador();
         String dado = "001ç1234567891234çPedroç50000";
         String[] array = verificador.divideDado(dado);
-        Assertions.assertEquals( 4, array.length);
+        Assertions.assertEquals(4, array.length);
     }
 
     @Test
-    public void deveVerificarEAdicionarVendedor(){
+    public void deveVerificarEAdicionarVendedor() {
         Verificador verificador = new Verificador();
         String dado = "001ç1234567891234çPedroç50000";
         verificador.verificaDado(dado);
         Assertions.assertEquals(1, verificador.getVendedores().getQuantidadeVendedores());
     }
+
     @Test
-    public void deveAdicionarApenasUmVendedorPorCpf(){
+    public void deveAdicionarApenasUmVendedorPorCpf() {
         Verificador verificador = new Verificador();
         String dado = "001ç1234567891234çPedroç50000";
         String dado1 = "001ç1234567891234çJoaoç35000";
@@ -40,15 +41,17 @@ public class TesteVerificador {
         verificador.verificaDado(dado1);
         Assertions.assertEquals(1, verificador.getVendedores().getQuantidadeVendedores());
     }
+
     @Test
-    public void deveVerificarEAdicionarCliente(){
+    public void deveVerificarEAdicionarCliente() {
         Verificador verificador = new Verificador();
         String dado = "002ç2345675434544345çJose da SilvaçRural";
         verificador.verificaDado(dado);
         Assertions.assertEquals(1, verificador.getClientes().getQuantidadeClientes());
     }
+
     @Test
-    public void deveAdicionarUmClientePorCnpj(){
+    public void deveAdicionarUmClientePorCnpj() {
         Verificador verificador = new Verificador();
         String dado = "002ç2345675434544345çJose da SilvaçRural";
         String dado1 = "002ç2345675434544345çFernando AlvesçRural";
@@ -58,7 +61,7 @@ public class TesteVerificador {
     }
 
     @Test
-    public void deveVerificarEAdicionarVenda(){
+    public void deveVerificarEAdicionarVenda() {
         Verificador verificador = new Verificador();
         String dado = "003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         verificador.verificaDado(dado);
@@ -66,7 +69,7 @@ public class TesteVerificador {
     }
 
     @Test
-    public void deveAdicionarUmaVendaPorIdVenda(){
+    public void deveAdicionarUmaVendaPorIdVenda() {
         Verificador verificador = new Verificador();
         String dado = "003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPedro";
         String dado1 = "003ç10ç[2-30-2.50,3-40-3.10]çCleber";

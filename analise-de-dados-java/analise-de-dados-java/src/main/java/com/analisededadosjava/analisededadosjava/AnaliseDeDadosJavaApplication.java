@@ -11,25 +11,25 @@ import java.nio.file.*;
 @SpringBootApplication
 public class AnaliseDeDadosJavaApplication {
 
-	public static void main(String[] args) throws IOException {
-		SpringApplication.run(AnaliseDeDadosJavaApplication.class, args);
+    public static void main(String[] args) throws IOException {
+        SpringApplication.run(AnaliseDeDadosJavaApplication.class, args);
 
-		WatchService watchService = FileSystems.getDefault().newWatchService();
+        WatchService watchService = FileSystems.getDefault().newWatchService();
 
-		Path directory = Paths.get("/home/becker/data/in");
+        Path directory = Paths.get("/home/becker/data/in");
 
-		WatchKey watchKey = directory.register(watchService,StandardWatchEventKinds.ENTRY_CREATE);
+        WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
 
-		while (true) {
-			for (WatchEvent<?> event : watchKey.pollEvents()) {
-				ManipuladorDeArquivos manipuladorDeArquivos = new ManipuladorDeArquivos();
-				manipuladorDeArquivos.deveEscreverReport(manipuladorDeArquivos);
-				watchKey.pollEvents().clear();
-				manipuladorDeArquivos.deveLimparPasta();
-				watchKey.pollEvents().clear();
-				break;
-			}
-		}
-	}
+        while (true) {
+            for (WatchEvent<?> event : watchKey.pollEvents()) {
+                ManipuladorDeArquivos manipuladorDeArquivos = new ManipuladorDeArquivos();
+                manipuladorDeArquivos.deveEscreverReport(manipuladorDeArquivos);
+                watchKey.pollEvents().clear();
+                manipuladorDeArquivos.deveLimparPasta();
+                watchKey.pollEvents().clear();
+                break;
+            }
+        }
+    }
 
 }
