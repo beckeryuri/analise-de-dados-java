@@ -75,20 +75,20 @@ Ao terminar de analisar os dados, o sistema reve retonar um log de quantos arqui
 Junto ao READ.ME deste diretório, existe um arquivo para teste com o none de "dados_teste.dat". 
 Ao ser inserido na pasta "in" o retorno dos logs do sistema devem ser: 
 
-2020-07-31 05:14:32.751  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       :Vendedor adicionado.
-2020-07-31 05:14:32.752  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Vendedor não adicionado pois CPF já foi cadastrado.
-2020-07-31 05:14:32.752  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Dado ignorado pois possui excesso ou ausência de informações.
-2020-07-31 05:14:32.752  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Dado ignorado pois possui excesso ou ausência de informações.
-2020-07-31 05:14:32.753  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Venda adicionada.
-2020-07-31 05:14:32.753  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Venda adicionada.
-2020-07-31 05:14:32.754  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Venda não adicionada pois ID da venda já foi cadastrado.
-2020-07-31 05:14:32.754  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Venda não adicionada pois ID da venda já foi cadastrado.
-2020-07-31 05:14:32.754  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Dado ignorado pois o código é inválido.
-2020-07-31 05:14:32.755  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Cliente adicionado.
-2020-07-31 05:14:32.755  INFO 12512 --- [           main] c.a.analisededadosjava.Verificador       : Cliente não adicionado pois CNPJ já foi cadastrado.
-2020-07-31 05:14:32.755  INFO 12512 --- [           main] c.a.a.ManipuladorDeArquivos              : O total de 1 arquivos foram lidos.
-2020-07-31 05:14:32.777  INFO 12512 --- [           main] c.a.a.ManipuladorDeArquivos              : Um novo relátorio foi escrito.
-2020-07-31 05:14:32.777  INFO 12512 --- [           main] c.a.a.ManipuladorDeArquivos              : Arquivos da pasta in foram deletados.
+Vendedor adicionado.
+Vendedor não adicionado pois CPF já foi cadastrado.
+Dado ignorado pois possui excesso ou ausência de informações.
+Dado ignorado pois possui excesso ou ausência de informações.
+Venda adicionada.
+Venda adicionada.
+Venda não adicionada pois ID da venda já foi cadastrado.
+Venda não adicionada pois ID da venda já foi cadastrado.
+Dado ignorado pois o código é inválido.
+Cliente adicionado.
+Cliente não adicionado pois CNPJ já foi cadastrado.
+O total de 1 arquivos foram lidos.
+Um novo relátorio foi escrito.
+Arquivos da pasta in foram deletados.
 
 Na pasta "out" um arquivo deve ter sido criado com o filename no formato "dia_dia-da-semana_mes_hora_ano.done.dat"
 O arquivo deve conter as seguintes informações:
