@@ -2,13 +2,18 @@ package com.analisededadosjava.analisededadosjava;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.util.Date;
 
+@Component
 public class ManipuladorDeArquivos {
 
     Logger logger = LoggerFactory.getLogger(ManipuladorDeArquivos.class);
+
 
     public void deveLimparPasta(){
         File folder = new File("/home/becker/data/in");
