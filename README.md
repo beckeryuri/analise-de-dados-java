@@ -32,7 +32,7 @@ Na entrada de arquivos, os Clientes serão filtrados por seus CNPJ's, sendo assi
 O mesmo vale para os vendedores, que serão filtrados por seus CPF's, e as vendas, que serão filtradas por seus ID's únicos.
 
 
-Após receber um ou mais arquivos, deve retornar um arquivo .dat com as informações requisitadas na proposta do aplicativo na pasta "out" em "%HOMEPATH%/data/out"
+Após receber um ou mais arquivos, deve retornar um arquivo .dat com as informações requisitadas na proposta do aplicativo na pasta "out" em "%HOMEPATH%/data/out".
 São elas:
 ● Quantidade de clientes no arquivo de entrada
 ● Quantidade de vendedores no arquivo de entrada
