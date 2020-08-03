@@ -26,7 +26,6 @@ public class AnaliseDeDadosJavaApplication {
                 manipuladorDeArquivos.deveEscreverReport(manipuladorDeArquivos);
                 watchKey.pollEvents().clear();
                 manipuladorDeArquivos.deveLimparPasta();
-                watchKey.pollEvents().clear();
                 break;
             }
         }

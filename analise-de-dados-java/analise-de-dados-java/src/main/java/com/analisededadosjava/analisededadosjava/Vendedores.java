@@ -18,6 +18,18 @@ public class Vendedores {
         return lista;
     }
 
+    public ArrayList<String> getNomeVendedores() {
+        ArrayList<String> vendedores = new ArrayList();
+        String vendedor;
+        for (Vendedor indice : this.vendedores) {
+            vendedor = indice.getNome();
+            if (!vendedores.contains(vendedor)) {
+                vendedores.add(vendedor);
+            }
+        }
+        return vendedores;
+    }
+
     public ArrayList<Vendedor> getVendedores() {
         return vendedores;
     }

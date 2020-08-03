@@ -42,6 +42,19 @@ public class Vendas {
         return totalVendas;
     }
 
+    public ArrayList<String> getVendedoresComNenhumaVenda(Vendedores vendedores){
+        ArrayList<String> nomes = vendedores.getNomeVendedores();
+        ArrayList<String> naoVenderam = new ArrayList<>();
+
+        for(String nome : nomes){
+            if(this.getTotalVendasPorNome(nome) == 0){
+                naoVenderam.add(nome);
+            }
+        }
+        return naoVenderam;
+
+    }
+
     public ArrayList<String> getPiorVendedor() {
         ArrayList<String> vendedores = getVendedores();
         Map<String, Double> vendasPorVendedor = new HashMap<>();

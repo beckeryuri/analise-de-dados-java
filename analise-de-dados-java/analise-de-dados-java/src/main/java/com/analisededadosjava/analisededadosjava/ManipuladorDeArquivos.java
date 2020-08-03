@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Component
@@ -73,13 +74,17 @@ public class ManipuladorDeArquivos {
                     "Nenhum vendedor foi registrado.";
 
             String piorvendedor = verificado.getVendas().getQuantidadeVendas() > 0 ?
-                    "O maior vendedor é o vendedor " + verificado.getVendas().getPiorVendedor().get(1).toUpperCase() +
+                    "Dos vendedores que fizeram alguma venda, o pior vendedor é o vendedor " + verificado.getVendas().getPiorVendedor().get(1).toUpperCase() +
                             " vendendo um total de: R$" + verificado.getVendas().getPiorVendedor().get(0) + "." :
                     "Não foi possível acessar o maior vendedor pois nenhuma venda foi registrada.";
 
             String maiorVenda = verificado.getVendas().getQuantidadeVendas() > 0 ?
                     "O ID da venda de maior valor é: " + verificado.getVendas().getMaiorVenda() + "." :
                     "Não foi possível acessar a maior venda pois nenhuma venda foi registrada";
+
+            ArrayList<String> naoVenderam = verificado.getVendas().getVendedoresComNenhumaVenda(verificado.getVendedores());
+
+            String naoVenderamStr = "Os vendedores " + naoVenderam.toString().replace("[", "").replace("]", "")+ " não fizeram nenhuma venda.";
 
             Date date = new Date();
 
@@ -100,6 +105,9 @@ public class ManipuladorDeArquivos {
             bw.newLine();
             bw.write(piorvendedor);
             bw.newLine();
+            if(!naoVenderam.isEmpty()){
+                bw.write(naoVenderamStr);
+            }
             bw.close();
 
             logger.info("Um novo relátorio foi escrito.");
