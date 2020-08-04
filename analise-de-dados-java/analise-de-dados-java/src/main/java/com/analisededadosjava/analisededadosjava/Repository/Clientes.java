@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Clientes {
 
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private final ArrayList<Cliente> clientes = new ArrayList<>();
 
     public ArrayList<String> getListaCnpj() {
         ArrayList<String> lista = new ArrayList<>();

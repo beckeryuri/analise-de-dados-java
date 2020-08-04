@@ -2,10 +2,10 @@ package com.analisededadosjava.analisededadosjava.Entity;
 
 public class Cliente {
 
-    private int id;
-    private String cnpj;
-    private String nome;
-    private String businessArea;
+    private final int id;
+    private final String cnpj;
+    private final String nome;
+    private final String businessArea;
 
     public Cliente(String[] array) {
         this.id = Integer.parseInt(array[0]);

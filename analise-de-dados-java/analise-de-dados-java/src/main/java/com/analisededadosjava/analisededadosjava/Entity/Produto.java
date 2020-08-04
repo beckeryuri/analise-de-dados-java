@@ -2,9 +2,9 @@ package com.analisededadosjava.analisededadosjava.Entity;
 
 public class Produto {
 
-    private int idProduto;
-    private int quantidade;
-    private double preço;
+    private final int idProduto;
+    private final int quantidade;
+    private final double preço;
 
     public Produto(String[] array) {
         this.idProduto = Integer.parseInt(array[0]);
