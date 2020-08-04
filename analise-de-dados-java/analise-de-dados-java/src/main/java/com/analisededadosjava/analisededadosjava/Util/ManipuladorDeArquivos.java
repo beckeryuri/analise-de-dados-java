@@ -28,8 +28,6 @@ public class ManipuladorDeArquivos {
     public void deveEscreverReport(ManipuladorDeArquivos manipulador) {
         Verificador verificado =  manipulador.verificaDados();
         manipulador.escrituraDeArquivos(verificado);
-        System.out.println(verificado.getVendedores().getNomeVendedores());
-
     }
 
     public Verificador verificaDados(){
