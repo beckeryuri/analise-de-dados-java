@@ -1,4 +1,4 @@
-analise-de-dados-java# Sistema de análise de dados.
+# Sistema de análise de dados.
 O programa de análise de dados foi desenvolvido no intuito de monitorar uma pasta de nome "in" em "%HOMEPATH%/data/in"
 para todos os arquivos .dat que forem adicionados.
 Os arquivos .dat devem seguir um padrão em sua composição: devem ser separados por quebra de linha, e os dados informados em cada linha devem ter o separador "ç".
@@ -33,11 +33,7 @@ O mesmo vale para os vendedores, que serão filtrados por seus CPF's, e as venda
 
 
 Após receber um ou mais arquivos, deve retornar um arquivo .dat com as informações requisitadas na proposta do aplicativo na pasta "out" em "%HOMEPATH%/data/out".
-São elas:
-● Quantidade de clientes no arquivo de entrada
-● Quantidade de vendedores no arquivo de entrada
-● ID da venda mais cara
-● O pior vendedor
+São elas: Quantidade de clientes no arquivo de entrada, quantidade de vendedores no arquivo de entrada, ID da venda mais cara e  o pior vendedor.
 
 Após o arquivo na pasta "out" ser escrito, todos os arquivos da pasta "in" serão apagados.
 
@@ -50,7 +46,7 @@ Certifique-se que sua máquina possui o Docker instalado.
 No terminal de sua máquina, digite o comando:
 
 ```bash
-docker build -t analise_dados/spring-boot-java-data-analisys
+docker build -t analise_dados/spring-boot-java-data-analisys .
 ```
 
 Esse comando deve criar a imagem que será usadada no Docker.
@@ -58,10 +54,10 @@ Esse comando deve criar a imagem que será usadada no Docker.
 Para inicializar o container, digite o comando:
 
 ```bash
-sudo docker run -p 8082:8082 analise_dados/spring-boot-java-data-analisys
+sudo docker run -p 8080:8080 analise_dados/spring-boot-java-data-analisys
 ```
 Enquanto o sistema estiver rodando, você pode adicionar arquivos à pasta "in" utilizando Postman ou Insomnia com o médoto de requisição POST,
-em "http://localhost:8082/dados/individual".
+em "http://localhost:8080/dados/upload".
 
 A requisição deve conter a chave "dados", do tipo FILE, e a chave deve conter o arquivo .dat.
 
@@ -72,31 +68,21 @@ No momento em que um ou mais arquivos forem adicionados, o programa deve retorna
 
 Ao terminar de analisar os dados, o sistema reve retonar um log de quantos arquivos foram lidos.
 
-Junto ao READ.ME deste diretório, existe um arquivo para teste com o none de "dados_teste.dat". 
-Ao ser inserido na pasta "in" o retorno dos logs do sistema devem ser: 
+Junto ao READ.ME deste diretório, existe um arquivo para teste com o none de "testFileWithAll.dat". 
 
-Vendedor adicionado.
-Vendedor não adicionado pois CPF já foi cadastrado.
-Dado ignorado pois possui excesso ou ausência de informações.
-Dado ignorado pois possui excesso ou ausência de informações.
-Venda adicionada.
-Venda adicionada.
-Venda não adicionada pois ID da venda já foi cadastrado.
-Venda não adicionada pois ID da venda já foi cadastrado.
-Dado ignorado pois o código é inválido.
-Cliente adicionado.
-Cliente não adicionado pois CNPJ já foi cadastrado.
-O total de 1 arquivos foram lidos.
-Um novo relátorio foi escrito.
-Arquivos da pasta in foram deletados.
+Ao ser inserido na pasta "in" o sistema retornará alguns logs referentes ao arquivo enviado.
 
 Na pasta "out" um arquivo deve ter sido criado com o filename no formato "dia_dia-da-semana_mes_hora_ano.done.dat"
 O arquivo deve conter as seguintes informações:
 
-"A quantidade de clientes registrados nos arquivos processados é: 1.
-A quantidade de vendedores registrados nos arquivos processados é: 1.
-O ID da venda de maior valor é: 8.
-O maior vendedor é o vendedor PEDRO vendendo um total de: R$393.5."
+"A quantidade de clientes registrados nos arquivos processados é: 24.
+A quantidade de vendedores registrados nos arquivos processados é: 25.
+O ID da venda de maior valor é: 128.
+Dos vendedores que fizeram alguma venda, o pior vendedor é o vendedor ANDRE vendendo um total de: R$845.5.
+Os vendedores Antonio, Luiz, Jose, Luan, Matheus não fizeram nenhuma venda."
+
+Para acessar essas informações e verificar se elas estão corretas um metodo de requisição do  tipo GET, em "http://localhost:8080/dados/download",
+deve retornar as informações do ultimo arquivo criado na pasta "OUT".
 
 Para encerrar o container, utilize o comando: 
 
