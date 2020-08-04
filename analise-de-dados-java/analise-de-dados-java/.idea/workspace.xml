@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06f739d4-8ccd-4571-bda5-c1c8655912cc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1fQnuU9D1DaEUtS17qjpGjLQkuZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Docker" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AnaliseDeDadosJavaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.analisededadosjava.analisededadosjava.AnaliseDeDadosJavaApplication" />
+      <module name="analise-de-dados-java.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.analisededadosjava.analisededadosjava.Entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AnaliseDeDadosJavaApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06f739d4-8ccd-4571-bda5-c1c8655912cc" name="Default Changelist" comment="" />
+      <created>1596159406532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596159406532</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="258" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596159689474">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="258" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.815@0.27.1600.815" timestamp="1596159689474" />
+    <state x="439" y="27" width="702" height="815" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596174441604">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="439" y="27" width="702" height="815" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1600.815@0.27.1600.815" timestamp="1596174441604" />
+    <state x="533" y="183" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596161913945">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="533" y="183" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1600.815@0.27.1600.815" timestamp="1596161913945" />
+    <state width="1554" height="197" key="GridCell.Tab.0.bottom" timestamp="1596550217568">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state width="1554" height="197" key="GridCell.Tab.0.bottom/0.27.1600.815@0.27.1600.815" timestamp="1596550217568" />
+    <state width="1554" height="197" key="GridCell.Tab.0.center" timestamp="1596550217566">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state width="1554" height="197" key="GridCell.Tab.0.center/0.27.1600.815@0.27.1600.815" timestamp="1596550217566" />
+    <state width="1554" height="197" key="GridCell.Tab.0.left" timestamp="1596550217566">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state width="1554" height="197" key="GridCell.Tab.0.left/0.27.1600.815@0.27.1600.815" timestamp="1596550217566" />
+    <state width="1554" height="197" key="GridCell.Tab.0.right" timestamp="1596550217567">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state width="1554" height="197" key="GridCell.Tab.0.right/0.27.1600.815@0.27.1600.815" timestamp="1596550217567" />
+    <state x="289" y="69" width="1022" height="737" key="SettingsEditor" timestamp="1596159868571">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="289" y="69" width="1022" height="737" key="SettingsEditor/0.27.1600.815@0.27.1600.815" timestamp="1596159868571" />
+    <state x="463" y="163" width="672" height="678" key="search.everywhere.popup" timestamp="1596179964875">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="463" y="163" width="672" height="678" key="search.everywhere.popup/0.27.1600.815@0.27.1600.815" timestamp="1596179964875" />
+    <state x="525" y="266" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1596549442635">
+      <screen x="0" y="27" width="1600" height="815" />
+    </state>
+    <state x="525" y="266" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1600.815@0.27.1600.815" timestamp="1596549442635" />
+  </component>
+</project>

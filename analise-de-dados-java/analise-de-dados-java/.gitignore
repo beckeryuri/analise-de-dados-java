@@ -1,6 +1,6 @@
+HELP.md
 .gradle
-.idea
-build
-gradle
-gradlew
-gradlew.bat
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
