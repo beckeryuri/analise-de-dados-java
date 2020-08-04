@@ -24,8 +24,6 @@ public class DownloadService {
                 }
             }
         }
-
-        System.out.println(chosenFile.getName());
         return chosenFile;
     }
 
