@@ -1,5 +1,6 @@
 package com.analisededadosjava.analisededadosjava;
 
+import com.analisededadosjava.analisededadosjava.Entity.Venda;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

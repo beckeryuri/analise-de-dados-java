@@ -1,4 +1,4 @@
-package com.analisededadosjava.analisededadosjava;
+package com.analisededadosjava.analisededadosjava.Entity;
 
 public class Produto {
 
@@ -20,24 +20,12 @@ public class Produto {
         return idProduto;
     }
 
-    public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
-    }
-
     public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public double getPreço() {
         return preço;
-    }
-
-    public void setPreço(double preço) {
-        this.preço = preço;
     }
 
 }

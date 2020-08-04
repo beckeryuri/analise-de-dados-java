@@ -1,10 +1,8 @@
-package com.analisededadosjava.analisededadosjava;
+package com.analisededadosjava.analisededadosjava.Util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,14 +26,53 @@ public class ManipuladorDeArquivos {
     }
 
     public void deveEscreverReport(ManipuladorDeArquivos manipulador) {
-
-        Verificador verificado = manipulador.leituraDeArquivos();
+        Verificador verificado =  manipulador.verificaDados();
         manipulador.escrituraDeArquivos(verificado);
+        System.out.println(verificado.getVendedores().getNomeVendedores());
 
     }
 
-    public Verificador leituraDeArquivos() {
+    public Verificador verificaDados(){
+        ArrayList<String> dados = this.ordenaDados();
+        Verificador verificador = new Verificador();
+        dados.forEach(verificador::verificaDado);
+        return verificador;
+    }
+
+    public ArrayList<String> ordenaDados(){
         Verificador verificar = new Verificador();
+        ArrayList<String> formatado = this.formataQuebraDeLInha(this.leituraDeArquivos());
+        ArrayList<String> clientes = new ArrayList<>();
+        ArrayList<String> vendedores = new ArrayList<>();
+        ArrayList<String> vendas = new ArrayList<>();
+        ArrayList<String> outros = new ArrayList<>();
+        ArrayList<String> ordenado = new ArrayList<>();
+        for(String indice : formatado){
+            String[] dividido = verificar.divideDado(indice);
+
+            switch (dividido[0]) {
+                case "001":
+                    clientes.add(indice);
+                    break;
+                case "002":
+                    vendedores.add(indice);
+                    break;
+                case "003":
+                    vendas.add(indice);
+                    break;
+                default:
+                    outros.add(indice);
+                    break;
+            }
+        }
+        ordenado.addAll(clientes);
+        ordenado.addAll(vendedores);
+        ordenado.addAll(vendas);
+        ordenado.addAll(outros);
+        return ordenado;
+    }
+
+    public ArrayList<String> leituraDeArquivos() {
 
         int qtdArquivosLidos = 0;
 
@@ -45,12 +82,14 @@ public class ManipuladorDeArquivos {
 
         File[] files = path.listFiles(filter);
 
+        ArrayList<String> entradaDados = new ArrayList<>();
+
         for (File file : files) {
             qtdArquivosLidos++;
             try (BufferedReader br = new BufferedReader(new FileReader(file.getAbsoluteFile()))) {
                 String line = br.readLine();
                 while (line != null) {
-                    verificar.verificaDado(line);
+                    entradaDados.add(line);
                     line = br.readLine();
                 }
             } catch (IOException e) {
@@ -59,7 +98,23 @@ public class ManipuladorDeArquivos {
 
         }
         logger.info("O total de " + qtdArquivosLidos + " arquivos foram lidos.");
-        return verificar;
+        return entradaDados;
+    }
+
+    public ArrayList<String> formataQuebraDeLInha(ArrayList<String> dados){
+        ArrayList<String> formatado = new ArrayList<>();
+
+        for(int i = 0; i <dados.size(); i++){
+
+            String[] separada = dados.get(i).split("ç");
+            if(separada.length < 4 ){
+                formatado.add(dados.get(i) + dados.get(i + 1));
+            }
+            if(separada.length == 4 ){
+                formatado.add(dados.get(i));
+            }
+        }
+        return formatado;
     }
 
     public void escrituraDeArquivos(Verificador verificado) {

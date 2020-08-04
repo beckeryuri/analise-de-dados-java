@@ -1,5 +1,6 @@
 package com.analisededadosjava.analisededadosjava;
 
+import com.analisededadosjava.analisededadosjava.Util.Verificador;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

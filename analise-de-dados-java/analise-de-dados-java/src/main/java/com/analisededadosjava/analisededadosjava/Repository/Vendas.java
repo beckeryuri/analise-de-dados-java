@@ -1,4 +1,6 @@
-package com.analisededadosjava.analisededadosjava;
+package com.analisededadosjava.analisededadosjava.Repository;
+
+import com.analisededadosjava.analisededadosjava.Entity.Venda;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,11 +9,11 @@ import java.util.stream.Collectors;
 
 public class Vendas {
 
-    private ArrayList<Venda> vendas = new ArrayList<>();
+    private final ArrayList<Venda> vendas = new ArrayList<>();
 
     public ArrayList<Integer> getListaIdVenda() {
 
-        ArrayList<Integer> ids = new ArrayList();
+        ArrayList<Integer> ids = new ArrayList<>();
         int id;
         for (Venda venda : this.vendas) {
             id = venda.getIdVenda();
@@ -21,7 +23,7 @@ public class Vendas {
     }
 
     public ArrayList<String> getVendedores() {
-        ArrayList<String> vendedores = new ArrayList();
+        ArrayList<String> vendedores = new ArrayList<>();
         String vendedor;
         for (Venda venda : this.vendas) {
             vendedor = venda.getNomeVendedor();
@@ -60,14 +62,14 @@ public class Vendas {
         Map<String, Double> vendasPorVendedor = new HashMap<>();
         String nomePiorVendedor;
         String valorPiorVenda;
-        for (int i = 0; i < vendedores.size(); i++) {
-            vendasPorVendedor.put(vendedores.get(i), getTotalVendasPorNome(vendedores.get(i)));
+        for (String vendedore : vendedores) {
+            vendasPorVendedor.put(vendedore, getTotalVendasPorNome(vendedore));
         }
         Map<String, Double> piorVendedor =
                 vendasPorVendedor.entrySet().stream()
                         .sorted(Map.Entry.comparingByValue())
                         .limit(1)
-                        .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         valorPiorVenda = piorVendedor.values().toString().replace("[", "").replace("]", "");
         nomePiorVendedor = piorVendedor.keySet().toString().replace("[", "").replace("]", "");
@@ -91,20 +93,12 @@ public class Vendas {
         return idMaiorVenda;
     }
 
-    public ArrayList<Venda> getVendas() {
-        return vendas;
-    }
-
     public int getQuantidadeVendas() {
         return vendas.size();
     }
 
     public void adicionarVenda(Venda venda) {
         this.vendas.add(venda);
-    }
-
-    public void setVendas(ArrayList<Venda> vendas) {
-        this.vendas = vendas;
     }
 
 }

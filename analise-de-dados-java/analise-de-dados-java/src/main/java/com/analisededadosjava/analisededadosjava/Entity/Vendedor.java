@@ -1,10 +1,10 @@
-package com.analisededadosjava.analisededadosjava;
+package com.analisededadosjava.analisededadosjava.Entity;
 
 public class Vendedor {
-    private int id;
-    private String cpf;
-    private String nome;
-    private double salario;
+    private final int id;
+    private final String cpf;
+    private final String nome;
+    private final double salario;
 
     public Vendedor(String[] array) {
         this.id = Integer.parseInt(array[0]);
@@ -17,32 +17,16 @@ public class Vendedor {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public double getSalario() {
         return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
     }
 
 }
